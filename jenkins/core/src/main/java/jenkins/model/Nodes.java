@@ -95,11 +95,11 @@ public class Nodes implements Saveable {
         return new ArrayList<Node>(nodes.values());
     }
     
-    public void updateAndTrim()
+    /*public void updateAndTrim()
     {
         jenkins.updateComputerList();
         jenkins.trimLabels();
-    }
+    }*/
 
     /**
      * Sets the list of nodes.
@@ -120,7 +120,7 @@ public class Nodes implements Saveable {
                 Nodes.this.nodes.keySet().removeAll(toRemove); // directory clean up will be handled by save
                 //jenkins.updateComputerList();
                 //jenkins.trimLabels();
-                updateAndTrim();
+                jenkins.updateAndTrim();
             }
         });
         save();
@@ -142,7 +142,7 @@ public class Nodes implements Saveable {
                     nodes.put(node.getNodeName(), node);
                     //jenkins.updateComputerList();
                     //jenkins.trimLabels();
-                    updateAndTrim();
+                    jenkins.updateAndTrim();
                 }
             });
             // no need for a full save() so we just do the minimum
@@ -176,7 +176,7 @@ public class Nodes implements Saveable {
                     if (node == nodes.remove(node.getNodeName())) {
                         //jenkins.updateComputerList();
                         //jenkins.trimLabels();
-                        updateAndTrim();
+                        jenkins.updateAndTrim();
                     }
                 }
             });
@@ -262,7 +262,7 @@ public class Nodes implements Saveable {
                 nodes.putAll(newNodes);
                 //jenkins.updateComputerList();
                 //jenkins.trimLabels();
-                updateAndTrim();
+                jenkins.updateAndTrim();
             }
         });
     }
