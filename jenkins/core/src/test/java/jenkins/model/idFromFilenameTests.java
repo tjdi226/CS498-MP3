@@ -9,9 +9,21 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import static.junit.Assert.assertTrue;
 
-public class IdFromFilenameTest
+import jenkins.model.IdStrategy;
+
+@RunWith(Theories.class)
+
+public class idFromFilenameTest
 {
-	@test
+	@Test
+	public void testHexToString()
+	{
+		IdStrategy = new IdStrategy.CaseSensative();
+		String input  ="$0068$0065$006c$006c$006f";
+		String output = strategy.idFromFile(input);
+		assertEquals("hello", output);	
+	}
+        @Test
 	public void testHexToStringBounds()
 	{
 		IdStrategy = new IdStrategy.CaseSensative();
@@ -19,7 +31,4 @@ public class IdFromFilenameTest
 		String output = strategy.idFromFile(input);
 		assertEquals("watch the scen", output);
 	}
-
-
-
 }
