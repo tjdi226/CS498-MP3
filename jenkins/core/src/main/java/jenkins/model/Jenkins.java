@@ -960,7 +960,12 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
             }
         }
     }
-
+    public void updateAndTrim()
+    {
+	updateComputerList();
+	trimLabels();
+    }
+		
     public void setNodeName(String name) {
         throw new UnsupportedOperationException(); // not allowed
     }
