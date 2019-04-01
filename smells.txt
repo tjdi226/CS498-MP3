@@ -1,0 +1,13 @@
+Questions
+---------
+Q1. The code smell at lines 558-568 and 606-616 are duplicates of code and can be removed. The way I would go about this is by replacing the duplicated code and use a function call.
+
+Q3. The code smell here uses the jenkins class more than its node class. This can be fixed by simply using the move method and moving the updateAndTrim() method to the jenkins class.
+
+Q4. The code smell here uses duplicate code AND long method. We decided to replace the algorithm with one that implements a for loop. We found this effective.
+
+Q6. The code smell that me and Sean worked on was inside HudsonTestCase.java
+   path: mp3/jenkins/test/src/main/java/org/jvnet/hudson/test/HudsonTestCase.java
+   The code smell is on lines 1060-1065 and 1070-1075 and is duplicated code.
+   This can be removed the same way as #1 replacing the duplicated code and use a function call.
+------------------------------------------------------------------------------------------------
