@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import java.util.EmptyStackException;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
-import static.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 import jenkins.model.IdStrategy;
 
